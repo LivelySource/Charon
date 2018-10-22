@@ -79,7 +79,7 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
 
   // Display all default settings.
   } else {
-    await message.channel.send(`***__Bot Default Settings__***\n\`\`\`json\n${inspect(defaults)}\n\`\`\``);
+    await message.channel.send(`***__Charon\'s Default Settings__***\n\`\`\`json\n${inspect(defaults)}\n\`\`\``);
   }
 };
 
