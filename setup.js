@@ -6,7 +6,7 @@ const fs = require("fs");
 let baseConfig = fs.readFileSync("./setup_base.txt", "utf8");
 
 const defaultSettings = `{
-  "prefix": "~",
+  "prefix": "-",
   "modLogChannel": "mod-log",
   "modRole": "Moderator",
   "adminRole": "Administrator",
@@ -58,7 +58,7 @@ let prompts = [
   if (!settings.has("default")) {
     prompts = prompts.slice(1);
     console.log("First Start! Inserting default guild settings in the database...");
-    await settings.setAsync("default", defaultSettings);
+    await settings.set("default", defaultSettings);
   }
   const isGlitch = await inquirer.prompt([{type: "confirm", name: "glitch", message: "Are you hosted on Glitch.com?", default: false}]);
 
@@ -82,7 +82,7 @@ let prompts = [
 
   if (answers.resetDefaults && answers.resetDefaults === "Yes") {
     console.log("Resetting default guild settings...");
-    await settings.setAsync("default", defaultSettings);
+    await settings.set("default", defaultSettings);
   }
 
   const port = answers.host.split(":")[1] || "81";
