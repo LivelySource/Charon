@@ -6,7 +6,7 @@
       <a href="https://discord.gg/reFzBd2"><img src="https://i.imgur.com/qkssCju.png" alt="Discord server"></a>
     </p>
     <p align="center" style="margin:0;">
-      <a href="https://github.com/LivelySource/Charon"><img src="https://img.shields.io/badge/STATUS-ONLINE-red.svg?longCache=true&style=for-the-badge"></a>
+      <a href="https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=502599671957553167"><img src="https://img.shields.io/badge/STATUS-ONLINE-red.svg?longCache=true&style=for-the-badge"></a>
     </p>
   </div>
 </div>
