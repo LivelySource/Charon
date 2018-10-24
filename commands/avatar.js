@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['Avatar','AVATAR'],
+  aliases: [],
   permLevel: "User"
 };
 
