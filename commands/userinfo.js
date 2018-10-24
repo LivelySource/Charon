@@ -32,6 +32,7 @@ exports.conf = {
 
 exports.help = {
   name: "userinfo",
+  category: "Moderation",
   description: "Gives some useful user info",
   usage: "userinfo [mention]"
 };
