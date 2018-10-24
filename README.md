@@ -10,4 +10,4 @@
     </p>
   </div>
 </div>
-Just another discord bot, but don't let it give you hell.
+Just another discord bot, but don't let it give you hell. Looking for developers to help out, if you'd like to contribute to this project DM me.

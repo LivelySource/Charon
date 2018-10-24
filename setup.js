@@ -4,7 +4,7 @@ const EnmapLevel = require("enmap-level");
 const fs = require("fs");
 
 let baseConfig = fs.readFileSync("./setup_base.txt", "utf8");
-
+// Thanks an idiots guide for the dashboard, much appricated.
 const defaultSettings = `{
   "prefix": "-",
   "modLogChannel": "mod-log",
@@ -53,7 +53,7 @@ let prompts = [
 ];
 
 (async function() {
-  console.log("Setting Up GuideBot Configuration...");
+  console.log("Setting Up Charon Configuration...");
   await settings.defer;
   if (!settings.has("default")) {
     prompts = prompts.slice(1);
