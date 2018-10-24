@@ -1,6 +1,6 @@
 {
   "name": "Charon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A major discord bot planned to help discord servers grow.(In Development)",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,8 @@
     "moment-duration-format": "^1.3.0",
     "passport": "^0.4.0",
     "passport-discord": "^0.1.2",
-    "snekfetch": "^3.5.2"
+    "snekfetch": "^3.5.2",
+    "google": "^2.0.1",
+	  "superagent": "^3.8.3"
   }
 }
