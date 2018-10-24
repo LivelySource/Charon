@@ -20,7 +20,7 @@ module.exports = async client => {
   require("../modules/dashboard")(client);  
 
   
-  client.user.setPresence({game: {name: `${client.settings.get("default").prefix}help | Serving ${client.user.size} users.`, type:0}});
+  client.user.setPresence({game: {name: `${client.settings.get("default").prefix}help | Serving ${client.guilds.size} servers. `, type:0}});
 
   // This means the bot is ready hehehe
   client.log("log", `${client.user.tag}, ready to serve ${client.users.size} users in ${client.guilds.size} servers.`, "Ready!");
