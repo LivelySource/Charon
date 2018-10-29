@@ -14,11 +14,11 @@ const config = {
 
  // Web Dashboard (Unfinished) 
   "dashboard" : {
-    "oauthSecret": "yes",
-    "callbackURL": "http://charon-.herokuapp.com:8080/callback",
-    "sessionSecret": "yes",
-    "domain": "charon-.herokuapp.com",
-    "port": 8080
+    "oauthSecret": process.env.token,
+    "callbackURL": "ec2-54-225-115-234.compute-1.amazonaws.com/callback",
+    "sessionSecret": process.env.DATABASE_URL,
+    "domain": "ec2-54-225-115-234.compute-1.amazonaws.com",
+    "port": 5432
   },
 
   
