@@ -1,6 +1,6 @@
 {
   "name": "Charon",
-  "version": "0.0.2",
+  "version": "0.1.7",
   "description": "A major discord bot planned to help discord servers grow.(In Development)",
   "main": "index.js",
   "scripts": {

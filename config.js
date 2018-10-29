@@ -14,10 +14,10 @@ const config = {
 
  // Web Dashboard (Unfinished) 
   "dashboard" : {
-    "oauthSecret": "your oauth secret from the app page",
-    "callbackURL": "http://localhost:8080/callback",
-    "sessionSecret": "enterasecrethere",
-    "domain": "localhost",
+    "oauthSecret": "yes",
+    "callbackURL": "http://charon-.herokuapp.com:8080/callback",
+    "sessionSecret": "yes",
+    "domain": "charon-.herokuapp.com",
     "port": 8080
   },
 
