@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+//Report advanced motherfucka
 
 const Discord = require("discord.js");
 const Report = require(".../Schema/report.js");
