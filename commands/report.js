@@ -1,5 +1,9 @@
 const Discord = require("discord.js");
 
+const Discord = require("discord.js");
+const Report = require(".../Schema/report.js");
+const mongoose = require("mongoose");
+mongoose.connect('mongodb://cluster0-zhqid.mongodb.net/Reports');
 module.exports.run = async (bot, message, args) => {
   //-report @_Lively (Reason)
 
@@ -18,8 +22,21 @@ module.exports.run = async (bot, message, args) => {
 
   let reportschannel = message.guild.channels.find(`name`, "mod-log")
   if(!reportschannel) return message.channel.send("Couldn't find the mod-log channel.");
+  
+  const report = new Report({
+    _id: mongoose.Types.ObjectId(),
+    username: rUser.user.username,
+    userID: rUser.id,
+    reason: reason,
+    snitch: message.author.username,
+    snitchID: message.author.id,
+    time: message.createdAt
+  })
 
-
+  report.save()
+  .then(result => console.log(result))
+  .catch(console.log(error));
+  channel.send('Report has been logged in the database.');
   message.delete().catch(O_o=>{});
   reportschannel.send(reportEmbed);
 
