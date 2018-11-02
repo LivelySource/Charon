@@ -3,7 +3,7 @@
 const Discord = require("discord.js");
 const Report = require("../model/report.js");
 const mongoose = require("mongoose");
-mongoose.createConnection(process.env.reports, {
+mongoose.createConnection('mongodb://cluster0-zhqid/Reports', {
   useNewUrlParser: true 
 });
 module.exports.run = async (bot, message, args) => {
@@ -27,6 +27,7 @@ module.exports.run = async (bot, message, args) => {
   
   const report = new Report({
     _id: mongoose.Types.ObjectId(),
+    server: message.guild.id,
     username: rUser.user.username,
     userID: rUser.id,
     reason: reason,
