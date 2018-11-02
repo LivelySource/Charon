@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const Report = require("../model/report.js");
 const mongoose = require("mongoose");
 const mongodb = require("mongodb")
-mongodb.connect('mongodb://cluster0-zhqid/Reports', {
+mongodb.connect('mongodb://Cluster0-shard-0:27017/Reports', {
   useNewUrlParser: true 
 });
 module.exports.run = async (bot, message, args) => {
