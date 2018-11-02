@@ -3,7 +3,7 @@
 const Discord = require("discord.js");
 const Report = require("../model/report.js");
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://cluster0-zhqid.mongodb.net/Reports:27017');
+mongoose.connect(process.env.reports);
 module.exports.run = async (bot, message, args) => {
   //-report @_Lively (Reason)
 
