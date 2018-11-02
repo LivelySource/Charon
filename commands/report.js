@@ -1,7 +1,7 @@
 //Report advanced motherfucka
 
 const Discord = require("discord.js");
-const Report = require("./schema/report.js");
+const Report = require(".../schema/report.js");
 const mongoose = require("mongoose");
 mongoose.connect('mongodb://cluster0-zhqid.mongodb.net/Reports');
 module.exports.run = async (bot, message, args) => {
