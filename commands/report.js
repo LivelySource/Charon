@@ -39,7 +39,6 @@ module.exports.run = async (bot, message, args) => {
 
   report.save()
   .then(result => console.log(result))
-  .catch(console.log(err));
   channel.send('Report has been logged in the database.');
   message.delete().catch(O_o=>{});
   reportschannel.send(reportEmbed);
