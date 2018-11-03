@@ -13,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
   if(!rUser) return message.channel.send("Couldn't find user.");
   let reason = args.join (" ").slice(22);
   let server = message.guild.name
-
   let serverID= message.guild.id
 
   let reportEmbed = new Discord.RichEmbed()
@@ -44,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
   report.save()
   .then(result => console.log(result))
   .catch(err => console.log(err));
-  channel.send('Report has been logged in the database.');
+  message.channel.send('Report has been logged in the database.');
   message.delete().catch(O_o=>{});
   reportschannel.send(reportEmbed);
 
