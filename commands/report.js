@@ -3,8 +3,7 @@
 const Discord = require("discord.js");
 const Report = require("../model/report.js");
 const mongoose = require("mongoose");
-const mongodb = require("mongodb")
-mongodb.connect(process.env.reports, {
+mongoose.connect(process.env.reports, {
   useNewUrlParser: true 
 });
 module.exports.run = async (bot, message, args) => {
@@ -13,6 +12,9 @@ module.exports.run = async (bot, message, args) => {
   let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!rUser) return message.channel.send("Couldn't find user.");
   let reason = args.join (" ").slice(22);
+  let server = message.guild.name
+
+  let serverID= message.guild.id
 
   let reportEmbed = new Discord.RichEmbed()
   .setDescription("Reports")
@@ -26,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
   let reportschannel = message.guild.channels.find(`name`, "mod-log")
   if(!reportschannel) return message.channel.send("Couldn't find the mod-log channel.");
   
-  const report = new Reports({
+  const report = new Report({
     _id: mongoose.Types.ObjectId(),
     server: message.guild.id,
     username: rUser.user.username,
@@ -34,12 +36,14 @@ module.exports.run = async (bot, message, args) => {
     reason: reason,
     snitch: message.author.username,
     snitchID: message.author.id,
+    server: server,
+    serverID: serverID,
     time: message.createdAt
   });
 
   report.save()
   .then(result => console.log(result))
-  .catch(console.log(err));
+  .catch(err => console.log(err));
   channel.send('Report has been logged in the database.');
   message.delete().catch(O_o=>{});
   reportschannel.send(reportEmbed);
