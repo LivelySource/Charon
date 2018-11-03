@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) => {
   if(!role) return message.reply("You did not specify a role");
   let kRole = message.guild.roles.find(`name`, role);
   if(!kRole) return message.reply("Couldn't find the specified role.")
+  let server = message.guild.name
   
   message.delete().catch(O_o=>{});
 
@@ -14,9 +15,9 @@ module.exports.run = async (bot, message, args) => {
   await(rMember.removeRole(kRole.id));
 
   try{
-     await rMember.send(`The role ${kRole.name} has been stripped away from you`)
+     await rMember.send(`The role ${kRole.name} has been stripped away from you in ${server}`)
   }catch(e){
-  message.channel.send(`<@${rMember.id} his role has been stripped away ${kRole.name}.`)
+  message.channel.send(`<@${rMember.id} his role has been stripped away ${kRole.name}`)
   }
 
 

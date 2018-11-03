@@ -9,6 +9,7 @@ module.exports.run = async (bot, message, args) => {
  if(!role) return message.reply("You did not specify a role");
  let kRole = message.guild.roles.find(`name`, role);
  if(!kRole) return message.reply("Couldn't find the specified role.")
+ let server = message.guild.name
 
  message.delete().catch(O_o=>{});
 
@@ -16,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
  await(rMember.addRole(kRole.id));
 
  try{
-    await rMember.send(`You have been assigned the role ${kRole.name} in `)
+    await rMember.send(`You have been assigned the role ${kRole.name} in ${server}`)
  }catch(e){
  message.channel.send(`<@${rMember.id} has been assigned the role ${kRole.name}.`)
  }
