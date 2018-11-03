@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
   let reportschannel = message.guild.channels.find(`name`, "mod-log")
   if(!reportschannel) return message.channel.send("Couldn't find the mod-log channel.");
   
-  const report = new Report({
+  const report = new Reports({
     _id: mongoose.Types.ObjectId(),
     server: message.guild.id,
     username: rUser.user.username,
@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
     snitch: message.author.username,
     snitchID: message.author.id,
     time: message.createdAt
-  })
+  });
 
   report.save()
   .then(result => console.log(result))
