@@ -6,7 +6,7 @@ mongoose.connect(process.env.reports, {
 });
 module.exports.run = async (bot, message, args) => {
 
-      // -ban @_Lively#0286
+      // -ban @_Lively#0286 <reason>
 
       let bUser = message.mentions.members.first()
       if(!bUser) return message.channel.send("Can't find user!");
