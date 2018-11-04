@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Channels", `📼 ${channelsize}`, inline)
     .addField("Users", `<:user:502649544622735360> ${usersize}`, inline)
     .addField("Created On", bot.user.createdAt)
-    .setFooter(`© 2018 LivelySource)
+    .setFooter(`© 2018 LivelySource`)
     .setTimestamp()
     
     message.channel.send(botinfoembed);
