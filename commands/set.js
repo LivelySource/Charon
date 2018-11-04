@@ -62,7 +62,7 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
   // Otherwise, the default action is to return the whole configuration in JSON format (to be prettified!);
   } else {
     await message.channel.send(`**${server} Settings**\n\`\`\`json\n${inspect(settings)}\n\`\`\``);
-    message.channel.send(`Charon\'s dashboard is currently offline.\n To view or change settings for ${server}-${settings.prefix}set <view/get/edit> <key> <value>`);
+    message.channel.send(`Charon\'s dashboard is currently offline.\n To view or change settings for ${server}\n \`${settings.prefix}set <view/get/edit> <key> <value>\`.`);
   }
 };
 
