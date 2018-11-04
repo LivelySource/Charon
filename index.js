@@ -32,7 +32,7 @@ client.aliases = new Enmap();
 client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
 //Odols Currency
 client.on("message", (message) => {
-  if (message.content.startsWith(client.settings.prefix)) {
+  if (message.content.startsWith(message.settings.prefix)) {
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
