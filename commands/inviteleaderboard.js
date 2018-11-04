@@ -25,10 +25,12 @@
       possibleInvites.push([invite.inviter.username, invite.uses]); 
   })
 
-  
+  let BOTLOGO = bot.user.displayAvatarURL
+
   let embed = new Discord.RichEmbed()
-      .setColor("#15d4db")
-      .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``); 
+      .setColor("#ffffff")
+      .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``)
+      .setFooter("Tracked By Charon", BOTLOGO)
 
 
     //   message.channel.send(embed);
@@ -36,7 +38,7 @@
 
   
   send(message.channel, embed, {
-      name: 'Server Invites',
+      name: 'Invite Leaderboard',
       icon: 'https://cdn.discordapp.com/attachments/494751952480108546/508540365805191168/agreement.png'
   })
   
