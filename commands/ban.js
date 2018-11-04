@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Ban = require("../model/ban.js");
+const Bans = require("../model/ban.js");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.reports, {
   useNewUrlParser: true
