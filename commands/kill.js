@@ -7,8 +7,8 @@ if(!killed) {
 
 let suicide = new Discord.RichEmbed()
 .setColor("#00f00")
-.setDescription(`${message.author} decied to kill themself 💔 REST IN PEACE`)
-.setThumbnail("https://discordapp.com/channels/472174636839469088/494751952480108546/508506268537847809")
+.setDescription(`${message.author} decied to kill themself 💔`)
+.setThumbnail("https://cdn.discordapp.com/attachments/494751952480108546/508506268537847808/rip.gif")
 
 message.channel.send(suicide)
 
@@ -16,8 +16,8 @@ message.channel.send(suicide)
 
 let murder = new Discord.RichEmbed()
 .setColor("#00f00")
-.setDescription(`${killed} was killed by ${message.author} 💔 REST IN PEACE`)
-.setThumbnail("https://discordapp.com/channels/472174636839469088/494751952480108546/508506268537847809")
+.setDescription(`${killed} was killed by ${message.author} 💔 `)
+.setThumbnail("https://cdn.discordapp.com/attachments/494751952480108546/508506268537847808/rip.gif")
 
 message.channel.send(murder)
 
