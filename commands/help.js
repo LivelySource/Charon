@@ -23,6 +23,7 @@ exports.run = (client, message, args, level) => {
     let currentCategory = "";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     let output = `!========== [Charon's Commands] ==========!\n\n[Use ${settings.prefix}help <commandname> for details]`;
 =======
     let output = `!==========< Charon's Commands >==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
@@ -30,6 +31,9 @@ exports.run = (client, message, args, level) => {
 =======
     let output = `!==========[Charon's commands]==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
 >>>>>>> parent of fce1978... push
+=======
+    let output = `!========== [Charon's Commands] ==========!\n`;
+>>>>>>> parent of 1797516... pust
     const sorted = myCommands.array().sort((p, c) => p.help.category > c.help.category ? 1 :  p.help.name > c.help.name && p.help.category === c.help.category ? 1 : -1 );
     sorted.forEach( c => {
       const cat = c.help.category.toProperCase();
@@ -41,7 +45,7 @@ exports.run = (client, message, args, level) => {
 >>>>>>> parent of fce1978... push
         currentCategory = cat;
       }
-      output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\nFor any further help, direct message _Lively#0286\n================================================`;
+      output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
     message.channel.send(output, {code:"asciidoc"});
   } else {
@@ -50,7 +54,7 @@ exports.run = (client, message, args, level) => {
     if (client.commands.has(command)) {
       command = client.commands.get(command);
       if (level < client.levelCache[command.conf.permLevel]) return;
-      message.channel.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`, {code:"asciidoc"});
+      message.channel.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n\n===============================`, {code:"asciidoc"});
     }
   }
 };
