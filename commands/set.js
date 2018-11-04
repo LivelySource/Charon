@@ -69,13 +69,13 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["setting", "settings"],
+  aliases: ["setting", "settings","set"],
   permLevel: "Administrator"
 };
 
 exports.help = {
-  name: "set",
+  name: "settings",
   category: "System",
   description: "View or change settings for your server.",
-  usage: "set <view/get/edit> <key> <value>"
+  usage: "settings <view/get/edit> <key> <value>"
 };

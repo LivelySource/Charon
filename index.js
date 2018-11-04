@@ -29,13 +29,12 @@ client.commands = new Enmap();
 client.aliases = new Enmap();
 
 const settings = message.settings;
-const defaults = client.settings.get("default");
+
 
 
 client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
 //Odols Currency
 client.on("message", (message) => {
-  if (message.content.startsWith(settings.prefix)) {
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
@@ -52,7 +51,6 @@ client.on("message", (message) => {
       odols.odols = odols.odols + odolstoadd;
     }
   })
-  }
 });
 
 //--------------------------------//
