@@ -16,15 +16,16 @@ module.exports.run = async (bot, message, args) => {
   let serverID= message.guild.id
 
   let reportEmbed = new Discord.RichEmbed()
-  .setDescription("Reports")
+  .setAuthor("Reports")
+  .setThumbnail(rUser.user.avatarURL)
   .setColor('RANDOM')
-  .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-  .addField("Reported By", `${message.author} With ID: ${message.author.id}`)
-  .addField("Channel", message.channel)
-  .addField("Time", message.createdAt)
-  .addField("Reason", reason);
+  .addField("⚠ - Reported User", `${rUser} with ID: ${rUser.id}`)
+  .addField("⚠ - Reported by", `${message.author} With ID: ${message.author.id}`)
+  .addField("⚙ - Channel", message.channel)
+  .addField("🔨 - Reason", reason)
+  .addField("Time", message.createdAt);
 
-  let reportschannel = message.guild.channels.find(`name`, "mod-log")
+  let reportschannel = message.guild.channels.find(`name`, message.settings.modLogChannel)
   if(!reportschannel) return message.channel.send("Couldn't find the mod-log channel.");
   
   const report = new Report({
