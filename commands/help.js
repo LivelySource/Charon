@@ -26,7 +26,7 @@ exports.run = (client, message, args, level) => {
     sorted.forEach( c => {
       const cat = c.help.category.toProperCase();
       if (currentCategory !== cat) {
-        output += `\n--- ${cat} ---`;
+        output += `\n--- ${cat} ---\n`;
         currentCategory = cat;
       }
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
@@ -38,7 +38,7 @@ exports.run = (client, message, args, level) => {
     if (client.commands.has(command)) {
       command = client.commands.get(command);
       if (level < client.levelCache[command.conf.permLevel]) return;
-      message.channel.send(`= ${command.help.name} = \n${command.help.description} usage::${command.help.usage}`, {code:"asciidoc"});
+      message.channel.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`, {code:"asciidoc"});
     }
   }
 };
