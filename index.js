@@ -37,8 +37,10 @@ client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
+let settings = message.settings;
 //Odols Currency
 bot.on("message", (message) => {
+  (message.content.startsWith(settings.prefix))
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
