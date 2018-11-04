@@ -41,7 +41,7 @@ const log = message => {
 bot.on("message", (message) => {
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
-  Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
+  Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
     if(!odols){
       const newOdols = new Odols({

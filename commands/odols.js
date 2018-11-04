@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, arg) => {
     await message.delete();
     
 
-    Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) => {
+    Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) => {
         if(err) console.log(err);
 
         let UserAvatar = message.author.displayAvatarURL
