@@ -49,7 +49,8 @@ client.on("message", (message) => {
       odols.odols = odols.odols + odolstoadd;
     }
   })
-};
+}
+
 //--------------------------------//
 // Loading + Func
 const init = async () => {
