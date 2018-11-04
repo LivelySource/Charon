@@ -3,7 +3,7 @@ if (process.version.slice(1).split(".")[0] < 8) throw new Error("Node 8.0.0 or h
 
 
 const Discord = require("discord.js");
-
+const bot = new Discord.Client();
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
@@ -28,7 +28,7 @@ require("./modules/functions.js")(client);
 client.commands = new Enmap();
 client.aliases = new Enmap();
 
-const settings = message.settings;
+
 
 
 
@@ -38,7 +38,7 @@ const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 //Odols Currency
-client.on("message", (message) => {
+bot.on("message", (message) => {
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
