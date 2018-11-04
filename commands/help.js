@@ -21,12 +21,16 @@ exports.run = (client, message, args, level) => {
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
     let currentCategory = "";
+<<<<<<< HEAD
     let output = `!========== [Charon's Commands] ==========!\n\n[Use ${settings.prefix}help <commandname> for details]`;
+=======
+    let output = `!==========< Charon's Commands >==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
+>>>>>>> parent of f56e1e4... Help improved
     const sorted = myCommands.array().sort((p, c) => p.help.category > c.help.category ? 1 :  p.help.name > c.help.name && p.help.category === c.help.category ? 1 : -1 );
     sorted.forEach( c => {
       const cat = c.help.category.toProperCase();
       if (currentCategory !== cat) {
-        output += `\n---► ${cat} \n`;
+        output += `\n--- ${cat} ---\n`;
         currentCategory = cat;
       }
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\nFor any further help, direct message _Lively#0286\n================================================`;
