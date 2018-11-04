@@ -17,7 +17,8 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
   // Retrieve current guild settings
   const settings = message.settings;
   const defaults = client.settings.get("default");
-  
+  let server = message.guild.name
+
   // Secondly, if a user does `-set edit <key> <new value>`, let's change it
   if (action === "edit") {
     if (!key) return message.reply("Please specify a key to edit");
@@ -60,8 +61,8 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
   
   // Otherwise, the default action is to return the whole configuration in JSON format (to be prettified!);
   } else {
-    await message.channel.send(`***__Current Guild Settings__***\n\`\`\`json\n${inspect(settings)}\n\`\`\``);
-    message.channel.send(`Charon\'s dashboard is currently offline.`);
+    await message.channel.send(`**${server} Settings**\n\`\`\`json\n${inspect(settings)}\n\`\`\``);
+    message.channel.send(`Charon\'s dashboard is currently offline.\n To view or change settings for ${server}-${settings.prefix}set <view/get/edit> <key> <value>`);
   }
 };
 
