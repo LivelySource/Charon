@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
       let reason = args.join(" ").slice(22);
       if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You're not Authorized to use this command");
       if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("That person cannot be banned");
-      if(!bReason) return message.reply("Enter a reason");
+      if(!reason) return message.reply("Enter a reason");
       let server = message.guild.name
       let serverID= message.guild.id
 
