@@ -2,7 +2,7 @@ const Discord = require('discord.js');
  //Optional
 
     module.exports.run = async (bot, message, args, tools) => {
-  let pages = ['page 1', 'page 2', 'page 3', 'page 4', 'All you need to do is add another item in the array', '**Supports markdown and regular chat description properties**']; 
+  let pages = ['page 1', 'page 2', 'page 3', 'page 4', 'page 5', 'page 6']; 
   let page = 1; 
  
   const embed = new Discord.RichEmbed() 
