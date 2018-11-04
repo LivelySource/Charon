@@ -19,11 +19,11 @@ module.exports.run = async (bot, message, args) => {
   .setAuthor("Reports")
   .setThumbnail(rUser.user.avatarURL)
   .setColor('RANDOM')
-  .addField("⚠ - Reported User", `${rUser} with ID: ${rUser.id}`)
-  .addField("⚠ - Reported by", `${message.author} With ID: ${message.author.id}`)
-  .addField("⚙ - Channel", message.channel)
-  .addField("🔨 - Reason", reason)
-  .addField("Time", message.createdAt);
+  .addField("⚠ - Reported User:", `${rUser} with ID: ${rUser.id}`)
+  .addField("⚠ - Reported by:", `${message.author} With ID: ${message.author.id}`)
+  .addField("⚙ - Channel:", message.channel)
+  .addField("🔨 - Reason:", reason)
+  .addField("🕑 - Time:", message.createdAt);
 
   let reportschannel = message.guild.channels.find(`name`, message.settings.modLogChannel)
   if(!reportschannel) return message.channel.send("Couldn't find the mod-log channel.");
