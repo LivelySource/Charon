@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     if(!searchTerm) return message.channel.send("Please type a term to search!");
     let matches = users.filter(u => u.tag.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    message.channel.send("Is this who who are looking for?" + matches.map(u => u.tag));
+    message.channel.send("Is this who who are looking for?\n User: " + matches.map(u => u.tag));
 
     message.delete();
 

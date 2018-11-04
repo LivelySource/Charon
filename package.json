@@ -40,6 +40,9 @@
     "passport-discord": "^0.1.2",
     "snekfetch": "^3.5.2",
     "google": "^2.0.1",
+    "quick.hook": "^1.5.1",
+    "table": "^5.1.0",
+    "array-sort": "^1.0.0",
 	  "superagent": "^3.8.3"
   }
 }
