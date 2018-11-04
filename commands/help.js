@@ -24,6 +24,7 @@ exports.run = (client, message, args, level) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     let output = `!========== [Charon's Commands] ==========!\n\n[Use ${settings.prefix}help <commandname> for details]`;
 =======
     let output = `!==========< Charon's Commands >==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
@@ -34,15 +35,22 @@ exports.run = (client, message, args, level) => {
 =======
     let output = `!========== [Charon's Commands] ==========!\n`;
 >>>>>>> parent of 1797516... pust
+=======
+    let output = `!==========[Charon's commands]==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
+>>>>>>> parent of 9fabffd... try?
     const sorted = myCommands.array().sort((p, c) => p.help.category > c.help.category ? 1 :  p.help.name > c.help.name && p.help.category === c.help.category ? 1 : -1 );
     sorted.forEach( c => {
       const cat = c.help.category.toProperCase();
       if (currentCategory !== cat) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         output += `\n--- ${cat} ---\n`;
 =======
         output += `\n--- ${cat} ==---\n`;
 >>>>>>> parent of fce1978... push
+=======
+        output += `\n--- ${cat} ---\n`;
+>>>>>>> parent of 9fabffd... try?
         currentCategory = cat;
       }
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
@@ -54,7 +62,11 @@ exports.run = (client, message, args, level) => {
     if (client.commands.has(command)) {
       command = client.commands.get(command);
       if (level < client.levelCache[command.conf.permLevel]) return;
+<<<<<<< HEAD
       message.channel.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n\n===============================`, {code:"asciidoc"});
+=======
+      message.channel.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}\n\n!=======================================!`, {code:"asciidoc"});
+>>>>>>> parent of 9fabffd... try?
     }
   }
 };
