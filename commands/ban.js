@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
       let bUser = message.mentions.members.first()
       if(!bUser) return message.channel.send("Can't find user!");
-      let bReason = args.join(" ").slice(22);
+      let reason = args.join(" ").slice(22);
       if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You're not Authorized to use this command");
       if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("That person cannot be banned");
       if(!bReason) return message.reply("Enter a reason");
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
       .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
       .addField("Banned In", message.channel)
       .addField("Time", message.createdAt)
-      .addField("Reason", bReason)
+      .addField("Reason", reason)
       .setTimestamp();
       
       message.delete().catch(O_o=>{});
