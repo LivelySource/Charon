@@ -36,6 +36,7 @@ client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
 //Odols Currency
 client.on("message", (message) => {
   let odolstoadd = Math.ceil(Math.random() * 2);
