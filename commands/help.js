@@ -21,7 +21,7 @@ exports.run = (client, message, args, level) => {
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
     let currentCategory = "";
-    let output = `!==========[==Charon's commands==]==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
+    let output = `!==========[Charon's commands]==========!\n\nFor any further help, direct message _Lively#0286\n\n[Use ${settings.prefix}help <commandname> for details]\n`;
     const sorted = myCommands.array().sort((p, c) => p.help.category > c.help.category ? 1 :  p.help.name > c.help.name && p.help.category === c.help.category ? 1 : -1 );
     sorted.forEach( c => {
       const cat = c.help.category.toProperCase();
@@ -31,7 +31,7 @@ exports.run = (client, message, args, level) => {
       }
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
-    message.channel.send(output, {code:"markdown"});
+    message.channel.send(output, {code:"asciidoc"});
   } else {
     // Show individual command's help.
     let command = args[0];
