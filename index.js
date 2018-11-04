@@ -8,6 +8,11 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-level");
+const mongoose = require("mongoose");
+//Establishing a connection with MongoDB...
+mongoose.connect(process.env.reports, {
+  useNewUrlParser: true 
+});
 
 // In the future I probably should change it to charon.whatever rather than client.whatever
 const client = new Discord.Client();
@@ -15,7 +20,7 @@ const client = new Discord.Client();
 
 client.config = require("./config.js");
 
-
+const Odols = require("./model/odols.js")
 
 require("./modules/functions.js")(client);
 
@@ -25,9 +30,27 @@ client.aliases = new Enmap();
 
 
 client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
+//Odols Currency
+if (message.content.startsWith(settings.prefix)) {
+  let odolstoadd = Math.ceil(Math.random() * 2);
+  console.log(odolstoadd + " odols")
+  Odols.findone({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
+    if(err) console.log(err)
+    if(!odols){
+      const newOdols = new Odols({
+        userID: message.author.id,
+        serverID: message.guild.id,
+        odols: odolstoadd
+      })
 
-
-
+      newOdols.save().catch(err => console.log(err));
+    }else {
+      odols.odols = odols.odols + odolstoadd;
+    }
+  })
+};
+//--------------------------------//
+// Loading + Func
 const init = async () => {
 
   
@@ -38,8 +61,6 @@ const init = async () => {
     const response = client.loadCommand(f);
     if (response) console.log(response);
   });
-
-  
   const evtFiles = await readdir("./events/");
   client.log("log", `Loading a total of ${evtFiles.length} events.`);
   evtFiles.forEach(file => {
