@@ -31,3 +31,16 @@ module.exports.run = async (bot, message, arg) => {
         }
     })
 }
+exports.conf = {
+    enabled: true,
+    guildOnly: true,
+    aliases: ["coins"],
+    permLevel: "User"
+  };
+  
+  exports.help = {
+    name: "odols",
+    category: "Fun",
+    description: "Keep track of your odols, they will grant you passage.",
+    usage: "odols"
+  };
