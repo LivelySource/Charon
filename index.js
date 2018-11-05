@@ -41,7 +41,7 @@ const log = message => {
 client.on("message", async (message) => {
   (message.content.startsWith(settings.prefix))
   let odolstoadd = Math.ceil(Math.random() * 2);
-  let settings = message.settings
+  const settings = message.settings
   console.log(odolstoadd + " odols")
   Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
