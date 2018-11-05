@@ -38,8 +38,9 @@ const log = message => {
 
 
 //Odols Currency
-client.on("message", async (message) => {
-  (message.content.startsWith(client.message.settings.prefix))
+client.on("message", async (args) => {
+  (message.content(join))
+  let join = args.join (" ").slice(22);
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
