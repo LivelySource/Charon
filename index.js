@@ -41,12 +41,14 @@ const log = message => {
 client.on("message", (message) => {
   (message.content.endsWith("."))
   let odolstoadd = Math.ceil(Math.random() * 2);
-  console.log(odolstoadd + " odols")
-  Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
+  console.log(odolstoadd + "odols")
+  Odols.findOne({user: message.user.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
     if(!odols){
       const newOdols = new Odols({
+        user: message.user.name,
         userID: message.author.id,
+        server: message.guild.name,
         serverID: message.guild.id,
         odols: odolstoadd
       })
@@ -54,6 +56,7 @@ client.on("message", (message) => {
       newOdols.save().catch(err => console.log(err));
     }else {
       odols.odols = odols.odols + odolstoadd;
+      odols.save().catch(err => console.log(err));
     }
   })
 });
