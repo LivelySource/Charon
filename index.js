@@ -38,7 +38,7 @@ const log = message => {
 
 
 //Odols Currency
-client.on("message", async (message) => {
+client.on("message", (message) => {
   (message.content.contains())
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
