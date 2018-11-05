@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const obolsSchema = mongoose.Schema({
+const odolsSchema = mongoose.Schema({
     user: String,
     userID: String,
     server: String,
     serverID: String,
-    obols: Number
+    odols: Number
 })
 
-module.exports = mongoose.model("Obols", obolsSchema);
+module.exports = mongoose.model("Odols", odolsSchema);

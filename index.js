@@ -19,7 +19,7 @@ const client = new Discord.Client();
 
 client.config = require("./config.js");
 
-const Obols = require("./model/obols.js")
+const Odols = require("./model/odols.js")
 
 require("./modules/functions.js")(client);
 
@@ -37,26 +37,26 @@ const log = message => {
 };
 
 
-//Obols Currency
+//Odols Currency
 client.on("message", (message) => {
   (message.content.endsWith("."))
-  let obolstoadd = Math.ceil(Math.random() * 1);
-  console.log(obolstoadd + "obols")
-  Obols.findOne({user: message.author.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, obols) =>{
+  let odolstoadd = Math.ceil(Math.random() * 1);
+  console.log(odolstoadd + "odols")
+  Odols.findOne({user: message.author.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
-    if(!obols){
-      const newObols = new Obols({
+    if(!odols){
+      const newOdols = new Odols({
         user: message.author.username,
         userID: message.author.id,
         server: message.guild.name,
         serverID: message.guild.id,
-        obols: obolstoadd
+        odols: odolstoadd
       })
 
-      newObols.save().catch(err => console.log(err));
+      newOdols.save().catch(err => console.log(err));
     }else {
-      obols.obols = obols.obols + obolstoadd;
-      obols.save().catch(err => console.log(err));
+      odols.odols = odols.odols + odolstoadd;
+      odols.save().catch(err => console.log(err));
     }
   })
 });
