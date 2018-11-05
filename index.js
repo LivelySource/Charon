@@ -39,7 +39,7 @@ const log = message => {
 
 //Odols Currency
 client.on("message", (message) => {
-  (message.content.contains())
+  (message.content.endWith("."))
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + " odols")
   Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
