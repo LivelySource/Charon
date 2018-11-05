@@ -38,7 +38,7 @@ const log = message => {
 
 
 //Odols Currency
-client.on("message", async (args) => {
+client.on("message", async (message, args) => {
   (message.content(join))
   let join = args.join (" ").slice(22);
   let odolstoadd = Math.ceil(Math.random() * 2);
