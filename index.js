@@ -42,11 +42,11 @@ client.on("message", (message) => {
   (message.content.endsWith("."))
   let odolstoadd = Math.ceil(Math.random() * 2);
   console.log(odolstoadd + "odols")
-  Odols.findOne({user: message.user.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, odols) =>{
+  Odols.findOne({user: message.author.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
     if(!odols){
       const newOdols = new Odols({
-        user: message.user.name,
+        user: message.author.username,
         userID: message.author.id,
         server: message.guild.name,
         serverID: message.guild.id,
