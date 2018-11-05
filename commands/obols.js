@@ -5,28 +5,28 @@ mongoose.connect(process.env.reports, {
   useNewUrlParser: true 
 });
 
-const Odols = require("../model/odols.js")
+const Obols = require("../model/obols.js")
 
 module.exports.run = async (bot, message, arg) => {
     await message.delete();
     
 
-    Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) => {
+    Obols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, obols) => {
         if(err) console.log(err);
 
         let UserAvatar = message.author.displayAvatarURL
-        let odolsemb = new Discord.RichEmbed()
-        .setTitle("Odols")
+        let obolsemb = new Discord.RichEmbed()
+        .setTitle("Obols")
         .setColor("#00f00")
         .setThumbnail("https://cdn.discordapp.com/attachments/494751952480108546/508774432249085972/odolsfig.gif")
         .setFooter(message.author.username,  )
-        if(!odols){
-            odolsemb.addField("Odols", "0", true);
-            return message.channel.send(odolsemb)
+        if(!obols){
+            obolsemb.addField("Obols", "0", true);
+            return message.channel.send(obolsemb)
 
         }else {
-            odolsemb.addField("Odols", odols.odols, true);
-            return message.channel.send(odolsemb)           
+            obolsemb.addField("Obols", obols.obols, true);
+            return message.channel.send(obolsemb)           
             
         }
     })
@@ -39,8 +39,8 @@ exports.conf = {
   };
   
   exports.help = {
-    name: "odols",
+    name: "obols",
     category: "Fun",
-    description: "Keep track of your odols, they will grant you passage.",
-    usage: "odols"
+    description: "Keep track of your obols, they will grant you passage.",
+    usage: "obols"
   };
