@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, arg) => {
             return message.channel.send(odolsemb)
 
         }else {
-            odolsemb.add("Odols", odols.odols, true);
+            odolsemb.addField("Odols", odols.odols, true);
             return message.channel.send(odolsemb)           
             
         }
