@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, arg) => {
         let obolsemb = new Discord.RichEmbed()
         .setTitle("Obols")
         .setColor("#00f00")
-        .setThumbnail("https://cdn.discordapp.com/attachments/494751952480108546/508774432249085972/obolsfig.gif")
-        .setFooter(message.author.username,  )
+        .setThumbnail("https://cdn.discordapp.com/attachments/494751952480108546/508774432249085972/odolsfig.gif")
+        .setFooter(message.author.username, message.author.displayAvatarURL)
         if(!obols){
             obolsemb.addField("Obols", "0", true);
             return message.channel.send(obolsemb)
