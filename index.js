@@ -36,11 +36,12 @@ const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 
-let join = args.join (" ").slice(22);
+
 //Odols Currency
-client.on("message", (message) => {
-  (message.content.startsWith(join))
+client.on("message", (message, args) => {
+  (message.content.startsWith(settings.prefix))
   let odolstoadd = Math.ceil(Math.random() * 2);
+  let settings = message.settings
   console.log(odolstoadd + " odols")
   Odols.findOne({userID: message.author.id, serverID: message.guild.id}, (err, odols) =>{
     if(err) console.log(err)
