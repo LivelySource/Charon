@@ -17,8 +17,8 @@ const config = {
     "oauthSecret": process.env.secret,
     "callbackURL": "ec2-54-225-115-234.compute-1.amazonaws.com/callback",
     "sessionSecret": process.env.secret2,
-    "domain": "https://charon-.herokuapp.com/",
-    "port": 5432
+    "domain": "localhost",
+    "port": 3000
   },
 
   
@@ -31,7 +31,9 @@ const config = {
     "systemNotice": "true", // This gives a notice when a user tries to run a command that they do not have permission to use.
     "welcomeChannel": "welcome",
     "welcomeMessage": "Welcome {{user}} to the Discord!",
-    "welcomeEnabled": "false"
+    "welcomeEnabled": "false",
+    "autoRole": "member",
+    "autoRoleEnabled": "false"
   },
 
   // PERMISSION LEVEL DEFINITIONS.

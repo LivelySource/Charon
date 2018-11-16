@@ -12,4 +12,10 @@ module.exports = (client, member) => {
 
 
   member.guild.channels.find("name", settings.welcomeChannel).send(welcomeMessage).catch(console.error);
+
+  if (settings.autoRoleEnabled !== "true") return;
+  
+  let role = member.guild.roles.find("name", settings.autoRole);
+  
+  member.addRole(role).catch(console.error);
 };
