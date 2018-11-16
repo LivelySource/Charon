@@ -32,6 +32,9 @@ const config = {
     "welcomeChannel": "welcome",
     "welcomeMessage": "Welcome {{user}} to the Discord!",
     "welcomeEnabled": "false",
+    "goodbyeChannel": "goodbye",
+    "goodbyeMessage": "Goodbye {{user}} see you later!",
+    "goodbyeEnabled": "false",
     "autoRole": "member",
     "autoRoleEnabled": "false"
   },
