@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-if (client.guilds.find(guild => guild.name === "Charon Support 💀") == false){
+if (bot.guilds.find(guild => guild.name === "Charon Support 💀") == false){
         return message.reply('This command is exculsively for the Charon, support server! Try ${settings.prefix}support');
     };
   //-verify
