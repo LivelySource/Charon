@@ -1,11 +1,10 @@
 const Discord = require('discord.js'); 
 const fs = require('file-system');
-const settings = message.settings;
-module.exports.run = async (client, bot, message, args, level,) => {
+module.exports.run = async (client, message, args, level,) => {
   // If no specific command is called, show all filtered commands.
   if (!args[0]) {
     // Load guild settings (for prefixes and eventually per-guild tweaks)
-    
+    const settings = message.settings;
 
 
     const myCommands = message.guild ? client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level) : client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level &&  cmd.conf.guildOnly !== true);
@@ -32,7 +31,6 @@ module.exports.run = async (client, bot, message, args, level,) => {
       const Miscelaneous = fs.readFileSync("./miscelaneous.txt", "utf8")
       const moderationCommands = fs.readFileSync("./moderation.txt", "utf8");
       const FunCommands = fs.readFileSync("./fun.txt", "utf8");
-      let bicon = bot.user.displayAvatarURL;
 
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
@@ -43,7 +41,7 @@ module.exports.run = async (client, bot, message, args, level,) => {
       .setTitle('Charon\'s Commmands - Help Guide')
       .setImage(setImages[setImagepage-1])
       .setURL("https://livelysource.tk/pages/charon.html")
-      .setFooter(`Pages ${descpage} of ${descpages.length}`, bicon) 
+      .setFooter(`Pages ${descpage} of ${descpages.length}`, "https://cdn.discordapp.com/avatars/502599671957553167/b3a0c67c4a76b6cd03de94d862227ff2.png") 
       .setDescription(descpages[descpage-1])
       
     message.channel.send(embed).then(msg => { 
