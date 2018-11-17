@@ -1,5 +1,6 @@
+const Discord = require('discord.js'); 
 
-exports.run = (client, message, args, level) => {
+exports.run = (client, message, args, level,) => {
   // If no specific command is called, show all filtered commands.
   if (!args[0]) {
     // Load guild settings (for prefixes and eventually per-guild tweaks)
@@ -23,7 +24,54 @@ exports.run = (client, message, args, level) => {
       }
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
-    message.channel.send(output, {code:"asciidoc"});
+
+    let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
+    let descpage = 1;
+  
+      const begin = fs.readFileSync("./begin.txt", "utf8");
+      const Miscelaneous = fs.readFileSync("./miscelaneous.txt", "utf8")
+      const moderationCommands = fs.readFileSync("./moderation.txt", "utf8");
+      const FunCommands = fs.readFileSync("./fun.txt", "utf8");
+      let bicon = bot.user.displayAvatarURL;
+   
+    const embed = new Discord.RichEmbed() 
+      .setColor(ff0000)
+      .setTitle('Charon\'s Commmands - Help Guide')
+      .setURL("https://livelysource.tk/pages/charon.html")
+      .setFooter(`Pages ${descpage} of ${descpages.length}`, bicon) 
+      .setDescription(descpages[descpage-1])
+      
+    message.channel.send(embed).then(msg => { 
+     
+      msg.react('⏪').then( r => { 
+        msg.react('⏩') 
+       
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
+       
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 }); 
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 }); 
+       
+        
+        backwards.on('collect', r => { 
+          if (descpage === 1) return; 
+          descpage--; 
+          embed.setDescription(descpages[descpage-1]); 
+          embed.setFooter(`descpage ${descpage} of ${descpages.length}`); 
+          msg.edit(embed) 
+        })
+       
+        forwards.on('collect', r => { 
+          if (descpage === descpages.length) return; 
+          descpage++; 
+          embed.setDescription(descpages[descpage-1]); 
+          embed.setFooter(`descpage ${descpage} of ${descpages.length}`); 
+          msg.edit(embed) 
+        })
+     
+      })
+   
+    })
   } else {
     // Show individual command's help.
     let command = args[0];
