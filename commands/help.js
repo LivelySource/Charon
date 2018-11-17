@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args, level,) => {
     let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "", "", ""];
     let setImagepage = 1;
     const embed = new Discord.RichEmbed() 
-      .setColor(ff0000)
+      .setColor("#ff0000")
       .setTitle('Charon\'s Commmands - Help Guide')
       .setImage(setImages[setImagepage-1])
       .setURL("https://livelysource.tk/pages/charon.html")
