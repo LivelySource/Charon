@@ -1,6 +1,6 @@
 const Discord = require('discord.js'); 
 const fs = require('file-system');
-module.exports.run = async (client, message, args, level) => {
+module.exports.run = async (client, bot, message, args, level,) => {
   // If no specific command is called, show all filtered commands.
   if (!args[0]) {
     // Load guild settings (for prefixes and eventually per-guild tweaks)
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args, level) => {
       const Miscelaneous = fs.readFileSync("./miscelaneous.txt", "utf8")
       const moderationCommands = fs.readFileSync("./moderation.txt", "utf8");
       const FunCommands = fs.readFileSync("./fun.txt", "utf8");
-      let bicon = client.user.displayAvatarURL;
+      let bicon = bot.user.displayAvatarURL;
 
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
