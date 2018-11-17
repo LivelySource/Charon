@@ -10,5 +10,3 @@ Your Discord's default settings should look like this:
 To configure these settings simply use `-set` *<view/get/edit> <key> <value>*
 
 Example: ```${settings.prefix}set edit modLogChannel myModLogsyeet```
-
-Result:

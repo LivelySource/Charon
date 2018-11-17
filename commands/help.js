@@ -34,11 +34,10 @@ module.exports.run = async (client, message, args, level,) => {
 
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
-    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png"];
     const embed = new Discord.RichEmbed() 
       .setColor("#ff0000")
       .setTitle('Charon\'s Commmands - Help Guide')
-      .setImage(setImages[descpage-1])
+      .setImage("https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png")
       .setURL("https://livelysource.tk/pages/charon.html")
       .setFooter(`Pages ${descpage} of ${descpages.length}`, "https://cdn.discordapp.com/avatars/502599671957553167/b3a0c67c4a76b6cd03de94d862227ff2.png") 
       .setDescription(descpages[descpage-1])
@@ -58,10 +57,7 @@ module.exports.run = async (client, message, args, level,) => {
         backwards.on('collect', r => { 
           if (descpage === 1) return; 
           descpage--;
-          if (descpage === 1) return; 
-          setImages--; 
-          embed.setDescription(descpages[descpage-1]); 
-          embed.setImage(setImages[descpage-1]);
+          embed.setDescription(descpages[descpage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
@@ -69,10 +65,7 @@ module.exports.run = async (client, message, args, level,) => {
         forwards.on('collect', r => { 
           if (descpage === descpages.length) return; 
           descpage++;
-          if (descpage === descpages.length) return; 
-          setImages++; 
           embed.setDescription(descpages[descpage-1]);
-          embed.setImage(setImages[descpage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
