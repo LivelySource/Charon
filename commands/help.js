@@ -35,7 +35,6 @@ module.exports.run = async (client, message, args, level,) => {
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
     let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png"];
-    let setImagepage = 1;
     const embed = new Discord.RichEmbed() 
       .setColor("#ff0000")
       .setTitle('Charon\'s Commmands - Help Guide')
@@ -58,16 +57,22 @@ module.exports.run = async (client, message, args, level,) => {
         
         backwards.on('collect', r => { 
           if (descpage === 1) return; 
-          descpage--; 
+          descpage--;
+          if (descpage === 1) return; 
+          setImages--; 
           embed.setDescription(descpages[descpage-1]); 
+          embed.setImage(setImages[setImagepage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
        
         forwards.on('collect', r => { 
           if (descpage === descpages.length) return; 
-          descpage++; 
-          embed.setDescription(descpages[descpage-1]); 
+          descpage++;
+          if (descpage === descpages.length) return; 
+          setImages++; 
+          embed.setDescription(descpages[descpage-1]);
+          embed.setImage(setImages[setImagepage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
