@@ -1,6 +1,6 @@
 const Discord = require('discord.js'); 
 
-exports.run = (client, message, args, level,) => {
+module.exports.run = async (client, message, args, level,) => {
   // If no specific command is called, show all filtered commands.
   if (!args[0]) {
     // Load guild settings (for prefixes and eventually per-guild tweaks)
