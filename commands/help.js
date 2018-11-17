@@ -25,17 +25,18 @@ exports.run = (client, message, args, level,) => {
       output += `${settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
 
-    let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
-    let descpage = 1;
-    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "", "", ""];
-    let setImagepage = 1;
+    
   
       const begin = fs.readFileSync("./begin.txt", "utf8");
       const Miscelaneous = fs.readFileSync("./miscelaneous.txt", "utf8")
       const moderationCommands = fs.readFileSync("./moderation.txt", "utf8");
       const FunCommands = fs.readFileSync("./fun.txt", "utf8");
       let bicon = bot.user.displayAvatarURL;
-   
+
+    let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
+    let descpage = 1;
+    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "", "", ""];
+    let setImagepage = 1;
     const embed = new Discord.RichEmbed() 
       .setColor(ff0000)
       .setTitle('Charon\'s Commmands - Help Guide')
