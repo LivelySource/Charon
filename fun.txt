@@ -1,0 +1,9 @@
+_**Fun**_\n
+`avatar` **Let me get a closer look at that ass** __Usage__: *avatar <@user>*
+`google` **Okay Google** __Usage__: *google <search>*
+`kill` **Kill someone or yourself** __Usage__: *kill <@user>*
+`meme` **Quick easy way to look at memes** __Usage__: *memes*
+`obols` **Keep track of your obols, they will grant you passage.** __Usage__: *obols*
+`quiz` **Start a pop quiz!** __Usage__: *quiz*
+`vote` **Start a Vote** __Usage__: *vote <question>*
+\n Give us suggestions on our Support Server!

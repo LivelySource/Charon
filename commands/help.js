@@ -27,6 +27,8 @@ exports.run = (client, message, args, level,) => {
 
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
+    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "", "", ""];
+    let setImagepage = 1;
   
       const begin = fs.readFileSync("./begin.txt", "utf8");
       const Miscelaneous = fs.readFileSync("./miscelaneous.txt", "utf8")
@@ -37,6 +39,7 @@ exports.run = (client, message, args, level,) => {
     const embed = new Discord.RichEmbed() 
       .setColor(ff0000)
       .setTitle('Charon\'s Commmands - Help Guide')
+      .setImage(setImages[setImagepage-1])
       .setURL("https://livelysource.tk/pages/charon.html")
       .setFooter(`Pages ${descpage} of ${descpages.length}`, bicon) 
       .setDescription(descpages[descpage-1])
