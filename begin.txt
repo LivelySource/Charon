@@ -1,19 +1,14 @@
-Thank you for using Charon!
+_**Thank you for using Charon!**_
 To Get Started use `${settings.prefix}settings`
-Your Discord's default settings should look like this
+Your Discord's default settings should look like this:
+
 ```{ prefix: '-',
   modLogChannel: 'mod-log',
   modRole: 'Moderator',
-  adminRole: 'Administrator',
-  systemNotice: 'true',
-  welcomeChannel: 'welcome',
-  welcomeMessage: 'Welcome {{user}} to the Discord!',
-  welcomeEnabled: 'false',
-  goodbyeChannel: 'goodbye',
-  goodbyeMessage: 'Goodbye {{user}} see you later!',
-  goodbyeEnabled: 'false',
-  autoRole: 'member',
-  autoRoleEnabled: 'false' }```
-To configure these settings simply use `${settings.prefix}set` *<view/get/edit> <key> <value>*
+ }```
+ 
+To configure these settings simply use `-set` *<view/get/edit> <key> <value>*
+
 Example: ```${settings.prefix}set edit modLogChannel myModLogsyeet```
+
 Result:

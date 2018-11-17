@@ -1,12 +1,12 @@
-_**Miscelaneous**_\n
-`${settings.prefix}botinfo` **Lists Charon's Information** __Usage__: *${settings.prefix}bot*
-`${settings.prefix}finduser` **Find a user's tag** __Usage__: *${settings.prefix}finduser <name>*
-`${settings.prefix}inviteleaderboard` **The leaderboard of invites** __Usage__: *${settings.prefix}inviteleaderboard*
-`${settings.prefix}mylevel` **Tells you your permission level for the current message location** __Usage__: *${settings.prefix}mylevel*
-`${settings.prefix}ping` **what a connection** __Usage__: *${settings.prefix}ping*
-`${settings.prefix}report` **We all like a snitch** __Usage__: *${settings.prefix}report <@user> <reason>*
-`${settings.prefix}roleinfo` **Displays the role information** __Usage__: *${settings.prefix}roleinfo <role>*
-`${settings.prefix}shortenlink` **Shorten any link! Be sure you have permission to send links!** __Usage__: *${settings.prefix}shortenlink <link>*
-`${settings.prefix}stats` **Gives some useful bot statistics** __Usage__: *${settings.prefix}stats*
+↜【_**Miscelaneous**_】↝
+`botinfo` **Lists Charon's Information** __Usage__: *bot*
+`finduser` **Find a user's tag** __Usage__: *finduser <name>*
+`inviteleaderboard` **The leaderboard of invites** __Usage__: *inviteleaderboard*
+`mylevel` **Tells you your permission level for the current message location** __Usage__: *mylevel*
+`ping` **what a connection** __Usage__: *ping*
+`report` **We all like a snitch** __Usage__: *report <@user> <reason>*
+`roleinfo` **Displays the role information** __Usage__: *roleinfo <role>*
+`shortenlink` **Shorten any link! Be sure you have permission to send links!** __Usage__: *shortenlink <link>*
+`stats` **Gives some useful bot statistics** __Usage__: *stats*
 
 Constantly adding more!

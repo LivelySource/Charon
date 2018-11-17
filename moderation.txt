@@ -1,9 +1,10 @@
-_**Moderation**_\n
-`${settings.prefix}ban` **Bans a rule breaking user.** __Usage__: *${settings.prefix}ban <@user> <reason>*
-`${settings.prefix}banlist` **Looks up your server's banlist** __Usage__: *${settings.prefix}banlist*
-`${settings.prefix}giverole` **Give a selected user a role** __Usage__: *${settings.prefix}giverole <@user> <role>*
-`${settings.prefix}takerole` **Take a user's role** __Usage__: *${settings.prefix}takerole <@user> <role>*
-`${settings.prefix}id` **Looks up a user's ID** __Usage__: *${settings.prefix}id <@user>*
-`${settings.prefix}userinfo` **Gives some useful user information** __Usage__: *${settings.prefix}userinfo <@user>*
-`${settings.prefix}purge` **Purges chat messages** __Usage__: *${settings.prefix}purge <amount>(2-1000)*
+↜【_**Moderation**_】↝
+`ban` **Bans a rule breaking user.** __Usage__: *ban <@user> <reason>*
+`banlist` **Looks up your server's banlist** __Usage__: *banlist*
+`giverole` **Give a selected user a role** __Usage__: *giverole <@user> <role>*
+`takerole` **Take a user's role** __Usage__: *takerole <@user> <role>*
+`id` **Looks up a user's ID** __Usage__: *id <@user>*
+`userinfo` **Gives some useful user information** __Usage__: *userinfo <@user>*
+`purge` **Purges chat messages** __Usage__: *purge <amount>(2-1000)*
+
 Adding More Soon!
