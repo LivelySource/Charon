@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args, level,) => {
 
     let descpages = [begin, moderationCommands, FunCommands, Miscelaneous]; 
     let descpage = 1;
-    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "", "", ""];
+    let setImages = ["https://cdn.discordapp.com/attachments/506553672440872973/513155483553497093/example.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png", "https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png"];
     let setImagepage = 1;
     const embed = new Discord.RichEmbed() 
       .setColor("#ff0000")
@@ -52,15 +52,15 @@ module.exports.run = async (client, message, args, level,) => {
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
         const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
        
-        const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 }); 
-        const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 }); 
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 1000000 }); 
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 1000000 }); 
        
         
         backwards.on('collect', r => { 
           if (descpage === 1) return; 
           descpage--; 
           embed.setDescription(descpages[descpage-1]); 
-          embed.setFooter(`descpage ${descpage} of ${descpages.length}`); 
+          embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
        
@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args, level,) => {
           if (descpage === descpages.length) return; 
           descpage++; 
           embed.setDescription(descpages[descpage-1]); 
-          embed.setFooter(`descpage ${descpage} of ${descpages.length}`); 
+          embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
      
