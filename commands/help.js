@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args, level,) => {
     const embed = new Discord.RichEmbed() 
       .setColor("#ff0000")
       .setTitle('Charon\'s Commmands - Help Guide')
-      .setImage(setImages[setImagepage-1])
+      .setImage(setImages[descpage-1])
       .setURL("https://livelysource.tk/pages/charon.html")
       .setFooter(`Pages ${descpage} of ${descpages.length}`, "https://cdn.discordapp.com/avatars/502599671957553167/b3a0c67c4a76b6cd03de94d862227ff2.png") 
       .setDescription(descpages[descpage-1])
@@ -61,7 +61,7 @@ module.exports.run = async (client, message, args, level,) => {
           if (descpage === 1) return; 
           setImages--; 
           embed.setDescription(descpages[descpage-1]); 
-          embed.setImage(setImages[setImagepage-1]);
+          embed.setImage(setImages[descpage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
@@ -72,7 +72,7 @@ module.exports.run = async (client, message, args, level,) => {
           if (descpage === descpages.length) return; 
           setImages++; 
           embed.setDescription(descpages[descpage-1]);
-          embed.setImage(setImages[setImagepage-1]);
+          embed.setImage(setImages[descpage-1]);
           embed.setFooter(`Pages ${descpage} of ${descpages.length}`); 
           msg.edit(embed) 
         })
