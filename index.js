@@ -41,7 +41,6 @@ const log = message => {
 client.on("message", (message) => {
   (message.content.endsWith("."))
   let obolstoadd = Math.ceil(Math.random() * 1);
-  console.log(obolstoadd + "obols")
   Obols.findOne({user: message.author.username, userID: message.author.id, server: message.guild.name, serverID: message.guild.id}, (err, obols) =>{
     if(err) console.log(err)
     if(!obols){

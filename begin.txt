@@ -1,5 +1,5 @@
 _**Thank you for using Charon!**_
-To Get Started use `${settings.prefix}settings`
+To Get Started use `-settings`
 Your Discord's default settings should look like this:
 
 ```{ prefix: '-',
@@ -9,4 +9,4 @@ Your Discord's default settings should look like this:
  
 To configure these settings simply use `-set` *<view/get/edit> <key> <value>*
 
-Example: ```${settings.prefix}set edit modLogChannel myModLogsyeet```
+Example: ```-set edit modLogChannel myModLogsyeet```

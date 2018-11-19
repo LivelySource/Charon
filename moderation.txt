@@ -1,6 +1,8 @@
 ↜【_**Moderation**_】↝
 `ban` **Bans a rule breaking user.** __Usage__: *ban <@user> <reason>*
+`unban` **Unbans a innocent user.** __Usage__: *unban <@user> <reason>*
 `banlist` **Looks up your server's banlist** __Usage__: *banlist*
+`kick` **Kicks a rule breaking user** __Usage__: *kick <@user> <reason>*
 `giverole` **Give a selected user a role** __Usage__: *giverole <@user> <role>*
 `takerole` **Take a user's role** __Usage__: *takerole <@user> <role>*
 `id` **Looks up a user's ID** __Usage__: *id <@user>*

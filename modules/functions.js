@@ -1,5 +1,7 @@
 module.exports = (client) => {
+  //I love this <3
 
+  //it's a keeper 
   /*
   PERMISSION LEVEL FUNCTION
 
@@ -61,14 +63,6 @@ module.exports = (client) => {
   };
 
 
-  /*
-  MESSAGE CLEAN FUNCTION
-
-  "Clean" removes @everyone pings, as well as tokens, and makes code blocks
-  escaped so they're shown more easily. As a bonus it resolves promises
-  and stringifies objects!
-  This is mostly only used by the Eval and Exec commands.
-  */
   client.clean = async (client, text) => {
     if (text && text.constructor.name == "Promise")
       text = await text;
@@ -83,17 +77,11 @@ module.exports = (client) => {
     return text;
   };
 
-  /* 
-  COMMAND LOAD AND UNLOAD
-  
-  To simplify the loading and unloading of commands from multiple locations
-  including the index.js load loop, and the reload function, these 2 ensure
-  that unloading happens in a consistent manner across the board.
-  */
+
   client.loadCommand = (commandName) => {
     try {
       const props = require(`../commands/${commandName}`);
-      client.log("log", `Loading Command: ${props.help.name}. 👌`);
+      client.log("log", `Loading Command: ${props.help.name} 💀`);
       if (props.init) {
         props.init(client);
       }

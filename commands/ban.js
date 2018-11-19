@@ -30,8 +30,7 @@ module.exports.run = async (bot, message, args) => {
       
       message.delete().catch(O_o=>{});
       message.channel.send(`The user ${bUser} has been banned`).then(msg => msg.delete(3000));
-      
-      guild.ban(`${bUser.id}`)
+      message.guild.member(bUser).ban(reason)
       .then(bUser => console.log(`Banned ${bUser.username || bUser.id || bUser} from ${server}`))
       .catch(console.error);
       let banChannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
