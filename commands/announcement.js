@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args, discord) => {
     const msg = args.join(" ");
     
     if (!supportguild.available) return;
-    const sembed = new discord.RichEmbed()
+    const sembed = new Discord.RichEmbed()
       .addField(`Announcement:\n**${msg}**`)
       .setTimestamp()
       .setColor("#ff0000")
