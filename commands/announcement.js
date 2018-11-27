@@ -15,7 +15,7 @@ module.exports.run = (bot, message, args, discord) => {
 
     announcement = supportguild.channels.find("name", "announcement");
     
-    message.announcement.send({embed: sembed})
+    announcement.send({embed: sembed})
   })
 }
 exports.conf = {
