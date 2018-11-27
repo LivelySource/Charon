@@ -52,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Duration", mutetime)
         .addField("Reason", reason);
 
-    let incidentschannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
+    let incidentschannel = message.guild.channels.find(`name`, settings.modLogChannel);
 
     if (!incidentschannel) return message.reply("I couldn't find your logging channel :skull:");
     incidentschannel.send(muteembed);
