@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
 
     const settings = message.guild ? client.getSettings(message.guild.id) : client.settings.get("default");
 
