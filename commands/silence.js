@@ -3,7 +3,7 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
-    const settings = message.guild ? client.getSettings(message.guild.id) : client.settings.get("default");
+    const settings = client.getSettings(member.guild.id)
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
