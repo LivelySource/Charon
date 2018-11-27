@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports.run = (bot, message, args, discord) => {
   bot.guilds.forEach((guild, id) => {
     const supportguild = bot.guilds.get('512733951794741248')
