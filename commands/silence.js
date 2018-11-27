@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-const settings = message.guild ? client.getSettings(message.guild.id) : client.settings.get("default");
 
 module.exports.run = async (bot, message, args) => {
 
+    const settings = message.guild ? client.getSettings(message.guild.id) : client.settings.get("default");
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
