@@ -15,7 +15,7 @@ const config = {
  // Web Dashboard (Unfinished) 
   "dashboard" : {
     "oauthSecret": process.env.secret,
-    "callbackURL": "ec2-54-225-115-234.compute-1.amazonaws.com/callback",
+    "callbackURL": "localhost:3000/callback",
     "sessionSecret": process.env.secret2,
     "domain": "localhost",
     "port": 3000
