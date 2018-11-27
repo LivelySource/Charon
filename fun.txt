@@ -6,5 +6,6 @@
 `obols` **Keep track of your obols, they will grant you passage.** __Usage__: *obols*
 `quiz` **Start a pop quiz!** __Usage__: *quiz*
 `vote` **Start a Vote** __Usage__: *vote <question>*
+`slots` **Have a little fun** __Usage__: *slots*
 
 Give us suggestions on our Support Server!

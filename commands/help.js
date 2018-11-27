@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args, level,) => {
       .setColor("#ff0000")
       .setTitle('Charon\'s Commmands - Help Guide')
       .setImage("https://cdn.discordapp.com/attachments/506553672440872973/513176534199042058/yeetify.png")
-      .setURL("https://livelysource.tk/pages/charon.html")
+      .setURL("https://livelysource.tk/charon/portal.html")
       .setFooter(`Pages ${descpage} of ${descpages.length}`, "https://cdn.discordapp.com/avatars/502599671957553167/b3a0c67c4a76b6cd03de94d862227ff2.png") 
       .setDescription(descpages[descpage-1])
       
