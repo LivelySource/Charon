@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
+const settings = message.guild ? client.getSettings(message.guild.id) : client.settings.get("default");
 
 module.exports.run = async (bot, message, args) => {
 
@@ -52,6 +53,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Reason", reason);
 
     let incidentschannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
+
     if (!incidentschannel) return message.reply("I couldn't find your logging channel :skull:");
     incidentschannel.send(muteembed);
     message.channel.send(`<@${tomute.id}> has been slienced for ${mutetime}`)
