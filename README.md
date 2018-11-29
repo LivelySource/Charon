@@ -10,7 +10,9 @@
     </p>
   </div>
 </div>
+Just another discord bot, but don't let it give you hell. Looking for developers to help out, if you'd like to contribute to this project DM me
+<div>
 <a href="https://discordbots.org/bot/502599671957553167" >
   <img src="https://discordbots.org/api/widget/502599671957553167.svg" alt="Charon" />
 </a>
-Just another discord bot, but don't let it give you hell. Looking for developers to help out, if you'd like to contribute to this project DM me.
+  </div>
