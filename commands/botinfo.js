@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let botinfoembed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setThumbnail(BOTLOGO)
-    .setDescription("Bot Information -- [Charon's Website](https://livelysource.tk/pages/charon.html)")
+    .setDescription("Bot Information -- [Charon's Website](https://livelysource.tk/portal)")
     .addField("Bot Owner", "🤵 <@171173840364371968>", inline )
     .addField("Bot Name", `💀 ${bot.user.username}`, inline)
     .addField("Bot Library", "📚 Discord.js", inline)
