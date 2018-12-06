@@ -18,14 +18,14 @@ module.exports.run = async (bot, message, args) => {
       let serverID= message.guild.id
 
       let banEmbed = new Discord.RichEmbed()
-      .setTitle("User Banned")
+      .setTitle("🔨 User Banned")
       .setThumbnail(bUser.avatarURL)
       .setColor("#bc0000")
-      .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-      .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-      .addField("Banned In", message.channel)
-      .addField("Time", message.createdAt)
-      .addField("Reason", bReason)
+      .addField("🔨 Banned User", `${bUser} with ID ${bUser.id}`)
+      .addField("🛠 Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
+      .addField("📄 Banned In", message.channel)
+      .addField("⏱ Time", message.createdAt)
+      .addField("📝 Reason", bReason)
       .setTimestamp();
       
       message.delete().catch(O_o=>{});
