@@ -10,9 +10,9 @@ exports.run = (client, message, args) => {
     if (reason.length < 1) return message.reply('You must supply a reason for the unban.');
     if (!user) return message.reply('You must supply a User Resolvable(Their ID)!').catch(console.error);
     let unbanEmbed = new Discord.RichEmbed()
-      .setTitle("🔓 User Pardoned")
+      .setTitle(" 💀**Moderation Logging**💀 ")
       .setThumbnail(user.avatarURL)
-      .setColor("#bc0000")
+      .setColor("#e56b00")
       .addField("🔓 Pardoned User", `${user} with ID ${user.id}`)
       .addField("💁 Pardoned By", `<@${message.author.id}> with ID ${message.author.id}`)
       .addField("⏱ Time", message.createdAt)
