@@ -29,10 +29,10 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp();
       
       message.delete().catch(O_o=>{});
-      message.channel.send(`The user ${bUser} has been banned`).then(msg => msg.delete(3000));
-      message.guild.member(bUser).ban(reason)
+      message.channel.send(`The user ${bUser} has been banned`).then(msg => msg.delete(3000))
       .then(bUser => console.log(`Banned ${bUser.username || bUser.id || bUser} from ${server}`))
       .catch(console.error);
+      
       let banChannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
        if(!banChannel) return message.channel.send("Can't find logs channel.");
 
@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
       .then(result => console.log(result))
       .catch(err => console.log(err));
       message.guild.member(bUser).ban(bReason);
-      banChannel.send(banEmbed);
+      banChannel.send(banEmbed)
       
     }
 
