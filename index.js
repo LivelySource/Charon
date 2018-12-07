@@ -37,16 +37,16 @@ const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 const bot = client
-antispam(bot, {
-  warnBuffer: 3,
-  maxBuffer: 5, 
-  interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
-  warningMessage: ", Stop spamming! If you continue I'll be forced to ban you! :skull:", // Warning message send to the user indicating they are going to fast.
-  banMessage: " was spamming even after I had warned them. Let this be a lesson, don't spam! :skull:", // Ban message, always tags the banned user in front of it.
-  maxDuplicatesWarning: 7, // Maximum amount of duplicate messages a user can send in a timespan before getting warned
-  maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
-  deleteMessagesAfterBanForPastDays: 7, // Delete the spammed messages after banning for the past x days.
-});
+//antispam(bot, {
+//  warnBuffer: 3,
+//  maxBuffer: 5, 
+//  interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
+//  warningMessage: ", Stop spamming! If you continue I'll be forced to ban you! :skull:", // Warning message send to the user indicating they are going to fast.
+//  banMessage: " was spamming even after I had warned them. Let this be a lesson, don't spam! :skull:", // Ban message, always tags the banned user in front of it.
+//  maxDuplicatesWarning: 7, // Maximum amount of duplicate messages a user can send in a timespan before getting warned
+//  maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
+//  deleteMessagesAfterBanForPastDays: 7, // Delete the spammed messages after banning for the past x days.
+//});
 
 //Obols Currency
 client.on("message", (message) => {
