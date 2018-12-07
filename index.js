@@ -36,7 +36,7 @@ client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
-
+const bot = client
 antispam(bot, {
   warnBuffer: 3,
   maxBuffer: 5, 
