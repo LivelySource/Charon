@@ -5,6 +5,7 @@ exports.run = (client, message, args) => {
     client.unbanReason = reason;
     client.unbanAuth = message.author;
     const user = args[0];
+    let server = message.guild.name;
     let unbanChannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
     if(!unbanChannel) return message.channel.send("Can't find mog-log channel.");
     if (reason.length < 1) return message.reply('You must supply a reason for the unban.');
@@ -17,7 +18,8 @@ exports.run = (client, message, args) => {
       .addField("💁 Pardoned By", `<@${message.author.id}> with ID ${message.author.id}`)
       .addField("⏱ Time", message.createdAt)
       .addField("📝 Reason", reason)
-      .setTimestamp();
+      .setTimestamp()
+      .setFooter(`Executed in ${server}`, message.guild.iconURL);
     message.guild.unban(user);
     message.reply(`Successfuly unbanned <@${user}>`).then(m => m.delete(2000));
     unbanChannel.send(unbanEmbed)

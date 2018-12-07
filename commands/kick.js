@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    let server = message.guild.name;
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Can't find user!");
     let kReason = args.join(" ").slice(22);
@@ -14,7 +15,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("💁 Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("📄 Kicked In", message.channel)
     .addField("⏱ Time", message.createdAt)
-    .addField("📝Reason", kReason);
+    .addField("📝Reason", kReason)
+    .setFooter(`Executed in ${server}`, message.guild.iconURL);
 
     let kickChannel = message.guild.channels.find(`name`, message.settings.modLogChannel);
     if(!kickChannel) return message.channel.send("Can't find mog-log channel.");

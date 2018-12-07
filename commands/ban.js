@@ -7,7 +7,7 @@ mongoose.connect(process.env.reports, {
 module.exports.run = async (bot, message, args) => {
 
       // -ban @_Lively#0286 <reason>
-
+      let server = message.guild.name;
       let bUser = message.mentions.members.first()
       if(!bUser) return message.channel.send("Can't find user!");
       let bReason = args.join(" ").slice(22);
@@ -26,6 +26,7 @@ module.exports.run = async (bot, message, args) => {
       .addField("📄 Banned In", message.channel)
       .addField("⏱ Time", message.createdAt)
       .addField("📝 Reason", bReason)
+      .setFooter(`Executed in ${server}`, message.guild.iconURL)
       .setTimestamp();
       
       message.delete().catch(O_o=>{});
