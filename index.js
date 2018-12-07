@@ -45,7 +45,8 @@ antispam(bot, {
   banMessage: " was spamming even after I had warned them. Let this be a lesson, don't spam!", // Ban message, always tags the banned user in front of it.
   maxDuplicatesWarning: 7, // Maximum amount of duplicate messages a user can send in a timespan before getting warned
   maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
-  deleteMessagesAfterBanForPastDays: 7 // Delete the spammed messages after banning for the past x days.
+  deleteMessagesAfterBanForPastDays: 7, // Delete the spammed messages after banning for the past x days.
+  exemptRoles: [message.settings.adminRole, message.settings.modRole],
 });
 
 //Obols Currency
