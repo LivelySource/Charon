@@ -7,5 +7,6 @@
 `quiz` **Start a pop quiz!** __Usage__: *quiz*
 `vote` **Start a Vote** __Usage__: *vote <question>*
 `slots` **Have a little fun** __Usage__: *slots*
+`hacked?` **Check if your information has been comprosmised** __Usage__: *hacked? <information>*
 
 Give us suggestions on our Support Server!

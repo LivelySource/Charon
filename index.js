@@ -71,6 +71,20 @@ client.on("message", (message) => {
   })
 });
 
+// Support Staff System
+client.on("guildCreate", guild => {
+  let serverOwner = guild.owner.userame
+  let discriminator = guild.owner.discriminator
+  let guildCreate = new Discord.RichEmbed()
+  .setColor("#b70000")
+  .addField("Someone added Charon to : ", guild.name) 
+  .addField("The Owner's ID is : ", guild.owner.id)
+  .addField("With guild ID : ", guild.id)
+  .setFooter(`Go see if ${serverOwner}${discriminator} needs your help!`)
+  
+  client.guilds.get(512733951794741248).channels.get(522577142630973444).send(guildCreate)
+});
+
 //--------------------------------//
 // Loading + Func
 const init = async () => {
